@@ -1,0 +1,21 @@
+{% extends "dappx/base.html" %}
+{% load static %}{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      {% if registered %}
+        <h1>Hvala na registraciji!</h1>
+      {% else %}
+        <h2>Registriraj se </h2>
+        <br>
+    
+        <form enctype="multipart/form-data" method="POST" class="form-horizontal"> 
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input type="submit" name="" value="Registriaj se">
+        </form>
+        
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

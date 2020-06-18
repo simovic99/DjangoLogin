@@ -1,0 +1,11 @@
+{% extends "dappx/base.html" %}
+{% block body_block %}<div class="container">
+  <div class="jumbotron">
+    <h1> Django login i registracija </h1>
+    {% if user.is_authenticated %}
+        <h2>Pozdrav {{ user.username }}</h2>
+    {% else %}
+        <h2>Registriraj se ili prijavi </h2>
+    {% endif %}
+  </div>
+</div>{% endblock %}
